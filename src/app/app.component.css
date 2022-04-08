@@ -1,0 +1,11 @@
+mat-toolbar {
+    justify-content: space-between; 
+}
+
+.content {
+   padding: 40px;
+}
+
+.app-name {
+    justify-content: left;
+}

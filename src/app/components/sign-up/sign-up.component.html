@@ -1,0 +1,39 @@
+<div class="form-container mat-elevation-z5">
+   <h1>Регистрация</h1>
+   <form [formGroup]="signUpForm" (ngSubmit)="submit()">
+      <mat-form-field>
+         <input matInput placeholder="Име" formControlName="name" />
+         <mat-error *ngIf="email?.errors?.['required']">
+            Моля въведете вашето име
+         </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+         <input matInput placeholder="Имейл адрес" formControlName="email" />
+         <mat-error *ngIf="email?.errors?.['required']">
+            Моля въведете имейл адрес
+         </mat-error>
+         <mat-error *ngIf="email?.errors?.['email']">
+            Моля въведете валиден имейл адрес
+         </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+         <input matInput type="password" placeholder="Парола" formControlName="password" />
+         <mat-error *ngIf="password?.errors?.['required']">
+            Задължително поле за парола
+         </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+         <input matInput type="password" placeholder="Потвърждаване на паролата" formControlName="confirmPassword" />
+         <mat-error *ngIf="confirmPassword?.errors?.['required']">
+            Задължително поле за парола
+         </mat-error>
+      </mat-form-field>
+      <mat-error *ngIf="signUpForm.errors?.['passwordsDontMatch']">
+         Паролите не съвпадат
+      </mat-error>
+      <div class="center margin-top">
+         <button type="submit" mat-raised-button color="primary">Регистрация</button>
+      </div>
+      <span class="center margin-top">Имате акаунт? <a class="sign-up-link" routerLink="/login">Вход</a></span>
+   </form>
+</div>

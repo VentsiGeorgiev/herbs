@@ -1,8 +1,9 @@
 <mat-toolbar color="primary">
   Билките на България
-  <ng-container *ngIf="authService.currentUser$ | async as user; else loginButton">
+  <ng-container *ngIf="user$ | async as user; else loginButton">
     <button mat-button [matMenuTriggerFor]="userMenu">
-      <mat-icon>account_circle</mat-icon>
+      <img class="profile-image-toolbar" width="30" height="30"
+        [src]="user.photoURL ?? 'assets/images/image-placeholder.png'" />
       {{user.displayName}}
       <mat-icon>expand_more</mat-icon>
     </button>
@@ -20,9 +21,11 @@
 </div>
 
 <mat-menu #userMenu="matMenu">
-  <button mat-button (click)="logout()">
-    <mat-icon>logout</mat-icon>
-    Изход
+  <button mat-menu-item routerLink="/profile">
+    <mat-icon>account_circle</mat-icon>Профил
+  </button>
+  <button mat-menu-item (click)="logout()">
+    <mat-icon>logout</mat-icon>Изход
   </button>
 </mat-menu>
 

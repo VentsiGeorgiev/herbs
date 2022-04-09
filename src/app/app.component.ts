@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from './services/auth.service';
+import { UsersService } from './services/users.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,9 @@ import { AuthService } from './services/auth.service';
 export class AppComponent {
   title = 'herbs';
 
-  constructor(public authService: AuthService, private router: Router) {
+  user$ = this.usersService.currentUserProfile$
+
+  constructor(private authService: AuthService, private router: Router, private usersService: UsersService) {
 
   }
 

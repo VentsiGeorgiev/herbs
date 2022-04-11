@@ -1,0 +1,34 @@
+<div class="container">
+   <h1>Добави билка</h1>
+</div>
+<div class="form-container text-center">
+   <form class="margin-top" [formGroup]="herbForm" (submit)="onSubmit(herbForm.value, herbForm.value)">
+      <div class="row">
+         <mat-form-field>
+            <input type="text" matInput formControlName="herbName" placeholder="Име на билка" />
+            <mat-error *ngIf="herbName?.errors?.['required']">
+               Задължително поле
+            </mat-error>
+         </mat-form-field>
+         <mat-form-field>
+            <input type="text" matInput formControlName="description" placeholder="Описание" />
+         </mat-form-field>
+         <label>Добави снимка *</label>
+         <div class="container">
+
+            <!-- test -->
+            <div class="profile-image">
+               <img width="200" height="200" [src]="imgSrc" (click)="inputField.click()" />
+               <button mat-mini-fab (click)="inputField.click()">
+                  <mat-icon>file_upload</mat-icon>
+               </button>
+            </div>
+
+         </div>
+      </div>
+      <input accept="image/*" #inputField type="file" hidden formControlName="imageUrl" (change)="showPreview($event)">
+      <button type="submit" class="margin-top add-btn" mat-raised-button color="primary">
+         Запази
+      </button>
+   </form>
+</div>

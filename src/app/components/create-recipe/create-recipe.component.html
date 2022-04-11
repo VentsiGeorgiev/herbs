@@ -1,0 +1,26 @@
+<div class="form-container">
+   <h1>Създаване на рецепта</h1>
+   <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+         <input matInput placeholder="Рецепта" formControlName="name" type="text" required />
+         <mat-error *ngIf="name?.errors?.['required']">
+            Моля въведете име на билката
+         </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+         <input matInput placeholder="Време за приготвяне" formControlName="prepartionTime" type="text" required />
+         <mat-error *ngIf="prepartionTime?.errors?.['required']">
+            Моля въведете време за приготвяне
+         </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+         <input matInput type="text" placeholder="Описание" formControlName="description" required />
+         <mat-error *ngIf="description?.errors?.['required']">
+            Моля въведете описание на билката
+         </mat-error>
+      </mat-form-field>
+      <div class="center margin-top">
+         <button [disabled]="!recipeForm.valid" type="submit" mat-raised-button color="primary">Добави</button>
+      </div>
+   </form>
+</div>

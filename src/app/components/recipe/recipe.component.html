@@ -1,0 +1,26 @@
+<h1>Всички рецепти</h1>
+<a class="btn" type="button" mat-raised-button color="primary" routerLink="/create">Добави рецепта</a>
+
+<table>
+   <thead>
+      <th>Име на рецептата</th>
+      <th>Време за приготвяне</th>
+      <th>Описание</th>
+   </thead>
+
+   <tbody>
+      <tr *ngFor="let recipe of Recipes">
+         <td>{{recipe.name}}</td>
+         <td>{{recipe.prepartionTime}}</td>
+         <td>{{recipe.description}}</td>
+         <td>
+            <button routerLink="/edit/{{recipe.id}}">
+               <mat-icon>edit</mat-icon>
+            </button>
+            <button (click)="deleteRow(recipe)">
+               <mat-icon>delete</mat-icon>
+            </button>
+         </td>
+      </tr>
+   </tbody>
+</table>

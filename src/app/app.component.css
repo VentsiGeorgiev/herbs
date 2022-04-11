@@ -14,3 +14,8 @@ mat-toolbar {
     border-radius: 100%;
     margin-right: 10px;
 }
+
+a {
+    text-decoration: none;
+    color: white;
+}

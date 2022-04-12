@@ -3,4 +3,5 @@ export interface IRecipe {
    name?: string;
    prepartionTime?: string;
    description?: string;
+   photoURL?: string;
 }

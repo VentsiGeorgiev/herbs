@@ -26,6 +26,7 @@ const routes: Routes = [
   { path: 'recipe', component: RecipeComponent, ...canActivate(redirectToLogin) },
   { path: 'create', component: CreateRecipeComponent, ...canActivate(redirectToLogin) },
   { path: 'edit/:id', component: EditRecipeComponent, ...canActivate(redirectToLogin) },
+  { path: 'herbs/:id', component: HerbComponent, ...canActivate(redirectToLogin) },
 
 ];
 

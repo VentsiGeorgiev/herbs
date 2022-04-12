@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
 import { HerbService } from 'src/app/services/herb.service';
 import { Storage } from '@angular/fire/storage';
 import { ImageUploadService } from 'src/app/services/image-upload.service';
 import { IHerb } from 'src/app/models/herb';
-import { concatMap } from 'rxjs';
+import { DataService } from 'src/app/services/data.service';
 
 
 
@@ -16,7 +16,8 @@ import { concatMap } from 'rxjs';
   styleUrls: ['./herb.component.css']
 })
 export class HerbComponent implements OnInit {
-
+  getHerbId: any;
+  herbData: any;
 
 
   imgSrc: string = 'assets/images/image-upload.png';
@@ -25,14 +26,25 @@ export class HerbComponent implements OnInit {
 
   constructor(
     private imageUploadService: ImageUploadService,
+    private param: ActivatedRoute,
+    private service: DataService,
     private toast: HotToastService,
+
+    private dataService: DataService,
     private herbService: HerbService,
     private storage: Storage,
     private router: Router,
   ) { }
 
   ngOnInit(): void {
-    this.resetForm();
+    this.getHerbId = this.param.snapshot.paramMap.get('id');
+    if (this.getHerbId) {
+      this.herbData = this.service.herbsDetails.filter((value) => {
+        return value.id == this.getHerbId;
+      });
+      console.log(this.herbData, 'herb data');
+
+    }
   }
 
 

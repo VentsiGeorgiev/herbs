@@ -1,1 +1,10 @@
-<p>Всички билки</p>
+<div class="row">
+   <div class="col-lg-3" *ngFor="let hb of herbsData">
+      <div class="herbbox">
+         <img src="{{hb.herbImg}}" alt="">
+
+         <p>{{hb.details}}</p>
+         <a [routerLink]="['/herbs',hb.id]" class="btn btn-success btn-lg px-4 me-md-2">{{hb.herbName}}</a>
+      </div>
+   </div>
+</div>

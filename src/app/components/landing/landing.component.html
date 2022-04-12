@@ -1,1 +1,34 @@
-<p>landing works!</p>
+<div class="container col-xxl-8 px-4 py-3">
+   <div class="row flex-lg-row-reverse align-items-center g-5 py-3">
+      <div class="col-10 col-sm-8 col-lg-6">
+         <img src="../../../assets/images/home.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
+            width="700" height="500" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+         <h1 class="display-5 fw-bold lh-1 mb-3">Билките на България</h1>
+         <p class="lead">В нашата страна съществува голямо богатство и разнообразие от растителни видове – около 3600
+            броя. От тях над 700 растения имат лечебни свойства, но само около половината се събират ежегодно.
+         </p>
+      </div>
+   </div>
+</div>
+
+<!-- herbs box-->
+<div class="container">
+   <h2>Най-популярните билки в България</h2>
+</div>
+<div class="container mt-4 mb-4">
+   <div class="row">
+      <div class="col-lg-3 mt-3" *ngFor="let hb of herbsData;index as i">
+         <div class="herbbox" *ngIf="i<=3">
+            <img src="{{hb.herbImg}}">
+            <h3>{{hb.herbName}}</h3>
+            <p>{{hb.herbDetails | slice:0:100}}</p>
+         </div>
+      </div>
+   </div>
+   <div class="container all-herbs">
+      <a routerLink="herbs" class="btn btn-success btn-lg px-4 me-md-2">Разгледайте всички</a>
+   </div>
+
+</div>

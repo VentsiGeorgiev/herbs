@@ -1,0 +1,48 @@
+.b-example-divider {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.herbbox {
+  padding: 10px 5px;
+}
+
+.herbbox img {
+  width: 100%;
+  height: 25%;
+  object-fit: cover;
+}
+
+.viewmorebtn{
+  text-decoration: none;
+  background-color: #000;
+  color: var(--secondary-color);
+}
+
+.all-herbs {
+  text-align: center;
+}
+
+.herbbox {
+  padding: 10px 5px;
+}
+
+.herbbox img {
+  width: 100%;
+  height: 25%;
+  object-fit: cover;
+}
+
+.viewmorebtn{
+  text-decoration: none;
+  background-color: #000;
+  color: var(--secondary-color);
+}
+
+
+@media (min-width: 992px) {
+  .rounded-lg-3 { border-radius: .3rem; }
+}

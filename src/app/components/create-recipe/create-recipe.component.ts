@@ -6,19 +6,20 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
 
-
 @Component({
   selector: 'app-create-recipe',
   templateUrl: './create-recipe.component.html',
   styleUrls: ['./create-recipe.component.css']
 })
 export class CreateRecipeComponent implements OnInit {
+
+
   public recipeForm!: FormGroup
 
   constructor(
     public recipeService: RecipeService,
     public formBuilder: FormBuilder,
-    public router: Router
+    public router: Router,
   ) {
     this.recipeForm = this.formBuilder.group({
       name: [''],

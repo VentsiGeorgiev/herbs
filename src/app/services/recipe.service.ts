@@ -1,13 +1,29 @@
 import { Injectable } from '@angular/core';
 
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
 
 import { IRecipe } from '../models/recipe'
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class RecipeService {
+
+  // get currentRecipe$(): Observable<IRecipe | null> {
+  //   return this.authService.currentUser$.pipe(
+  //     switchMap(user => {
+
+  //       if (!user?.uid) {
+  //         return of(null)
+  //       }
+
+  //       const ref = doc(this.firestore, 'users', user?.uid)
+  //       return docData(ref) as Observable<ProfileUser>
+  //     })
+  //   )
+  // }
 
   constructor(private angularFirestore: AngularFirestore) { }
 

@@ -1,9 +1,9 @@
 <h1>Всички рецепти</h1>
-<table mat-table>
-   <thead>
-      <th mat-header-cell>Име на рецептата</th>
-      <th mat-header-cell>Време за приготвяне</th>
-      <th mat-header-cell>Описание</th>
+<table class="table">
+   <thead class="thead-light">
+      <th scope="col">Име на рецептата</th>
+      <th scope="col">Време за приготвяне</th>
+      <th scope="col">Описание</th>
    </thead>
 
    <tbody>
@@ -13,14 +13,15 @@
             <td mat-cell>{{recipe.prepartionTime}}</td>
             <td mat-cell>{{recipe.description}}</td>
             <td mat-cell>
-               <button routerLink="/edit/{{recipe.id}}">
+               <button mat-mini-fab routerLink="/edit/{{recipe.id}}">
                   <mat-icon>edit</mat-icon>
                </button>
-               <button (click)="deleteRow(recipe)">
+               <button mat-mini-fab (click)="deleteRow(recipe)">
                   <mat-icon>delete</mat-icon>
                </button>
             </td>
          </ng-container>
+         <hr>
       </tr>
    </tbody>
 </table>

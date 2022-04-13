@@ -33,6 +33,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { CreateRecipeComponent } from './components/create-recipe/create-recipe.component';
 import { EditRecipeComponent } from './components/edit-recipe/edit-recipe.component';
 import { RecipeComponent } from './components/recipe/recipe.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { RecipeComponent } from './components/recipe/recipe.component';
     HerbsComponent,
     RecipeComponent,
     CreateRecipeComponent,
-    EditRecipeComponent
+    EditRecipeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +60,7 @@ import { RecipeComponent } from './components/recipe/recipe.component';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+
     MatCardModule,
     ReactiveFormsModule,
     FormsModule,

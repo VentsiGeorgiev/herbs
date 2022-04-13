@@ -20,7 +20,7 @@
 <div class="container mt-4 mb-4">
    <div class="row">
       <div class="col-lg-3 mt-3" *ngFor="let hb of herbsData;index as i">
-         <div class="herbbox" *ngIf="i<=3">
+         <div class="herbbox" *ngIf="i<=5">
             <img src="{{hb.herbImg}}">
             <h3>{{hb.herbName}}</h3>
             <p>{{hb.herbDetails | slice:0:100}}</p>

@@ -34,6 +34,7 @@ import { CreateRecipeComponent } from './components/create-recipe/create-recipe.
 import { EditRecipeComponent } from './components/edit-recipe/edit-recipe.component';
 import { RecipeComponent } from './components/recipe/recipe.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { FooterComponent } from './components/footer/footer.component';
     RecipeComponent,
     CreateRecipeComponent,
     EditRecipeComponent,
-    FooterComponent
+    FooterComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

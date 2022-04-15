@@ -1,0 +1,32 @@
+<mat-toolbar color="primary">
+   <a href="/">Билките на България</a>
+   <ng-container *ngIf="user$ | async as user; else loginButton">
+      <button mat-button [matMenuTriggerFor]="userMenu">
+         <img class="profile-image-toolbar" width="30" height="30"
+            [src]="user.photoURL ?? 'assets/images/image-placeholder.png'" />
+         {{user.displayName}}
+         <mat-icon>expand_more</mat-icon>
+      </button>
+   </ng-container>
+   <ng-template #loginButton>
+      <button mat-button routerLink="login">
+         <mat-icon>login</mat-icon>
+         Вход
+      </button>
+   </ng-template>
+</mat-toolbar>
+
+<mat-menu #userMenu="matMenu">
+   <button mat-menu-item routerLink="/herbs">
+      <mat-icon>spa</mat-icon>Билки
+   </button>
+   <button mat-menu-item routerLink="/recipe">
+      <mat-icon>receipt</mat-icon>Рецепти
+   </button>
+   <button mat-menu-item routerLink="/profile">
+      <mat-icon>account_circle</mat-icon>Профил
+   </button>
+   <button mat-menu-item (click)="logout()">
+      <mat-icon>logout</mat-icon>Изход
+   </button>
+</mat-menu>

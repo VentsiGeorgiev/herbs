@@ -63,6 +63,7 @@ export class RecipeService {
         name: recipe.name,
         prepartionTime: recipe.prepartionTime,
         description: recipe.description,
+        photoURL: recipe.photoURL
       });
   }
 

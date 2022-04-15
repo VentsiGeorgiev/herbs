@@ -54,11 +54,11 @@ export class SignUpComponent implements OnInit {
   }
 
   get password() {
-    return this.signUpForm.get('email')
+    return this.signUpForm.get('password')
   }
 
   get confirmPassword() {
-    return this.signUpForm.get('email')
+    return this.signUpForm.get('confirmPassword')
   }
 
   submit() {
